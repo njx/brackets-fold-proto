@@ -51,17 +51,14 @@ const float PI = 3.1415629;
 void main()
 {
     vec4 pos = a_position;
-    float ramp = a_meshCoord.y;
-    if (ramp > 0.5) {
-    	ramp = 1.0 - ramp;
-    }
+    float ramp = step(0.5, 1.0 - a_meshCoord.y) * a_meshCoord.y + step(0.5, a_meshCoord.y) * (1.0 - a_meshCoord.y);
     float zOffset = ramp * -50.0;
     float adjT = t * 0.999; // don't get to the end to avoid overlap
   
     pos.z = zOffset * mapDepth * adjT - mapDepth * adjT / 2.0;
     pos.y = (pos.y + 0.5) * (1.0 - adjT) - 0.5; 
 
-    v_lighting = 1.0 - (ramp * adjT * 1.5);
+    v_lighting = 1.0 - (ramp * adjT * 0.5);
 
     gl_Position = u_projectionMatrix * transform * pos;
 }

@@ -28,49 +28,49 @@
 }
 
 .doFold {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: fold;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
 }
 
 .doUnfold {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: unfold;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
 }
 
 @-webkit-keyframes fold {
     from {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
     }
     to {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
     }
 }
 
 @-webkit-keyframes unfold {
     from {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
     }
     to {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
     }
 }
 
 .doBelowFold {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: slideUp;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
 }
 
 .doBelowUnfold {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: slideDown;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
 }
 
 @-webkit-keyframes slideUp {
@@ -105,17 +105,17 @@
 }
 
 .collapse {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: collapse;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;    
+    -webkit-animation-timing-function: ease-in;    
 }
 
 .expand {
-    -webkit-animation-duration: 0.15s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-name: expand;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in;
 }
 
 @-webkit-keyframes collapse {
