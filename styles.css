@@ -1,0 +1,158 @@
+#outer {
+    position: absolute;
+    background: url(outer-flat.png);
+    left: 0;
+    top: 0;
+    width: 1035px;
+    height: 817px;
+}
+
+#folder {
+    position: absolute;
+    background: url(folder-flat.png);
+    left: 57px;
+    top: 181px;
+    width: 921px;
+    height: 301px;
+    -webkit-transform: translateZ(0);
+}
+
+#below {
+    position: absolute;
+    background: url(below-flat.png);
+    left: 57px;
+    top: 481px;
+    width: 921px;
+    height: 256px;
+    -webkit-transform: translateZ(0);
+}
+
+.doFold {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: fold;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+}
+
+.doUnfold {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: unfold;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes fold {
+    from {
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+    }
+    to {
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+    }
+}
+
+@-webkit-keyframes unfold {
+    from {
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+    }
+    to {
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 4 4 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 10, useColoredBack 1, backColor 1 1 1 1, direction 0, shadow 0);
+    }
+}
+
+.doBelowFold {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: slideUp;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+}
+
+.doBelowUnfold {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: slideDown;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes slideUp {
+    from {
+        top: 481px;
+        height: 256px;
+    }
+    to {
+        top: 181px;
+        height: 556px;
+    }
+}
+
+@-webkit-keyframes slideDown {
+    from {
+        top: 181px;
+        height: 556px;
+    }
+    to {
+        top: 481px;
+        height: 256px;
+    }
+}
+
+#tri {
+    position: absolute;
+    background: url(expanded.png);
+    left: 115px;
+    top: 165px;
+    width: 16px;
+    height: 16px;
+}
+
+.collapse {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: collapse;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;    
+}
+
+.expand {
+    -webkit-animation-duration: 0.15s;
+    -webkit-animation-name: expand;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes collapse {
+    from {
+        -webkit-transform: rotateZ(0deg);
+    }
+    to {
+        -webkit-transform: rotateZ(-90deg);
+    }
+}
+
+@-webkit-keyframes expand {
+    from {
+        -webkit-transform: rotateZ(-90deg);
+    }
+    to {
+        -webkit-transform: rotateZ(0deg);
+    }
+}
+
+#ellipses {
+    position: absolute;
+    display: none;
+    background: url(ellipses.png);
+    left: 429px;
+    top: 167px;
+    width: 37px;
+    height: 15px;
+}
+
+#sep {
+    position: absolute;
+    display: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    width: 921px;
+    height: 0px;
+    left: 57px;
+    top: 181px;
+}
