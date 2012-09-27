@@ -47,12 +47,11 @@ void main()
 {
     vec4 pos = a_position;
     float ramp = step(0.5, 1.0 - a_meshCoord.y) * a_meshCoord.y + step(0.5, a_meshCoord.y) * (1.0 - a_meshCoord.y);
-    float adjT = t * 0.999; // don't get to the end to avoid overlap
   
-    pos.z = ramp * -50.0 * mapDepth * adjT;
-    pos.y = (pos.y + 0.5) * (1.0 - adjT) - 0.5; 
+    pos.z = ramp * -50.0 * mapDepth * t;
+    pos.y = (pos.y + 0.5) * (1.0 - t) - 0.5; 
 
-    v_lighting = 1.0 - (ramp * adjT * 0.5);
+    v_lighting = 1.0 - (ramp * t * 0.5);
 
     gl_Position = u_projectionMatrix * transform * pos;
 }
