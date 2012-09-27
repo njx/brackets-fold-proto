@@ -1,0 +1,162 @@
+body {
+    -webkit-perspective: 1000px;
+}
+
+#outer {
+    position: absolute;
+    background: url(outer-flat.png);
+    left: 0;
+    top: 0;
+    width: 1035px;
+    height: 817px;
+}
+
+#folder-top {
+    position: absolute;
+    background: url(folder-flat-top.png);
+    left: 57px;
+    top: 181px;
+    width: 921px;
+    height: 150px;
+    -webkit-transition: -webkit-transform 2.0s ease-in;
+    -webkit-transform-origin: center top;
+    -webkit-transform: translateZ(0);
+}
+
+#folder-bottom {
+    position: absolute;
+    background: url(folder-flat-bottom.png);
+    left: 57px;
+    top: 331px;
+    width: 921px;
+    height: 151px;
+    -webkit-transition: -webkit-transform 2.0s ease-in;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: translateZ(0);
+}
+
+#below {
+    position: absolute;
+    background: url(below-flat.png);
+    left: 57px;
+    top: 481px;
+    width: 921px;
+    height: 256px;
+    -webkit-transform: translateZ(0);
+}
+
+#folder-top.doFoldTop {
+    -webkit-transform: rotateX(-90deg);
+}
+
+#folder-top.doUnfoldTop {
+    -webkit-transform: rotateX(0deg);
+}
+
+#folder-bottom.doFoldBottom {
+    -webkit-transform: translateY(-301px) rotateX(90deg);
+}
+
+#folder-bottom.doUnfoldBottom {
+    -webkit-transform: translateY(0px) rotateX(0deg);
+}
+
+
+.doBelowFold {
+    -webkit-animation-duration: 2.0s;
+    -webkit-animation-name: slideUp;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in;
+}
+
+.doBelowUnfold {
+    -webkit-animation-duration: 2.0s;
+    -webkit-animation-name: slideDown;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes slideUp {
+    from {
+        top: 481px;
+        height: 256px;
+    }
+    to {
+        top: 181px;
+        height: 556px;
+    }
+}
+
+@-webkit-keyframes slideDown {
+    from {
+        top: 181px;
+        height: 556px;
+    }
+    to {
+        top: 481px;
+        height: 256px;
+    }
+}
+
+#tri {
+    position: absolute;
+    background: url(expanded.png);
+    left: 115px;
+    top: 165px;
+    width: 16px;
+    height: 16px;
+}
+
+.collapse {
+    -webkit-animation-duration: 2.0s;
+    -webkit-animation-name: collapse;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in;    
+}
+
+.expand {
+    -webkit-animation-duration: 2.0s;
+    -webkit-animation-name: expand;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes collapse {
+    from {
+        -webkit-transform: rotateZ(0deg);
+    }
+    to {
+        -webkit-transform: rotateZ(-90deg);
+    }
+}
+
+@-webkit-keyframes expand {
+    from {
+        -webkit-transform: rotateZ(-90deg);
+    }
+    to {
+        -webkit-transform: rotateZ(0deg);
+    }
+}
+
+#ellipses {
+    position: absolute;
+    display: none;
+    background: url(ellipses.png);
+    left: 429px;
+    top: 167px;
+    width: 37px;
+    height: 15px;
+}
+
+#sep {
+    position: absolute;
+    display: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    width: 921px;
+    height: 0px;
+    left: 57px;
+    top: 181px;
+}
+12u

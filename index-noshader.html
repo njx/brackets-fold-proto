@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Folding mockup</title>
+    <link rel="stylesheet" href="styles-noshader.css"/>
+</head>
+    
+<body>
+    <div id="outer"></div>
+    <div id="folder-top"></div>
+    <div id="folder-bottom"></div>
+    <div id="below"></div>
+    
+    <div id="tri"></div>
+    <div id="ellipses"></div>
+    <div id="sep"></div>
+    
+    <script>
+        var folded = false,
+            tri = document.getElementById("tri"),
+            ellipses = document.getElementById("ellipses"),
+            sep = document.getElementById("sep");
+        
+        function handleAnimEnd() {
+            ellipses.style.display = sep.style.display = "block";
+        }
+        
+        document.body.onclick = function (e) {
+            document.getElementById("folder-top").className = folded ? "doUnfoldTop" : "doFoldTop";
+            document.getElementById("folder-bottom").className = folded ? "doUnfoldBottom" : "doFoldBottom";
+            document.getElementById("below").className = folded ? "doBelowUnfold" : "doBelowFold";
+            tri.className = folded ? "expand" : "collapse";
+            
+            if (folded) {
+                tri.removeEventListener("webkitAnimationEnd", handleAnimEnd);
+                ellipses.style.display = sep.style.display = "none";
+            } else {
+                tri.addEventListener("webkitAnimationEnd", handleAnimEnd);
+            }            
+            
+            folded = !folded;
+        };
+    </script>
+</body>
+</html>
