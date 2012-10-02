@@ -31,6 +31,7 @@ uniform vec2 u_textureSize;
 
 uniform mat4 transform;
 uniform float mapDepth;
+uniform float foldPoints;
 uniform float t;
 
 // Varyings
@@ -46,12 +47,12 @@ const float PI = 3.1415629;
 void main()
 {
     vec4 pos = a_position;
-    float ramp = step(0.5, 1.0 - a_meshCoord.y) * a_meshCoord.y + step(0.5, a_meshCoord.y) * (1.0 - a_meshCoord.y);
+    float depth = cos(a_meshCoord.y * PI * foldPoints) / 2.0 - 0.5;
   
-    pos.z = ramp * -50.0 * mapDepth * t;
+    pos.z = depth * 25.0 * mapDepth * t;
     pos.y = (pos.y + 0.5) * (1.0 - t) - 0.5; 
 
-    v_lighting = 1.0 - (ramp * t * 0.5);
+    v_lighting = 1.0 + (depth * t * 0.5);
 
     gl_Position = u_projectionMatrix * transform * pos;
 }

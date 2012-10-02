@@ -43,19 +43,19 @@
 
 @-webkit-keyframes fold {
     from {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 8 8 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5, foldPoints 8);
     }
     to {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 8 8 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5, foldPoints 8);
     }
 }
 
 @-webkit-keyframes unfold {
     from {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 8 8 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 1, mapDepth 5, foldPoints 8);
     }
     to {
-        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 2 2 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5);
+        -webkit-filter: custom(url(shader.vs) mix(url(shader.fs) multiply source-atop), 8 8 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), t 0, mapDepth 5, foldPoints 8);
     }
 }
 
